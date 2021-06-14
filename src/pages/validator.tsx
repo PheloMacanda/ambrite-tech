@@ -7,7 +7,7 @@ const Validator = () => {
 
     // check the validity of the JSON file..
 
-    const jsonValidityCheck = (json:any) => {
+    const jsonValidityCheck = (json: any) => {
         try {
             JSON.parse(json);
             return true;
@@ -18,7 +18,7 @@ const Validator = () => {
 
     // Take a file as an input
 
-    function showContent(e:any) {
+    function showContent(e: any) {
         e.preventDefault();
 
         const reader = new FileReader();
@@ -33,10 +33,13 @@ const Validator = () => {
     return (
         <>
             <div className="picker">
-                <input type="file" id="file" name="file" onChange={(e) => showContent(e)} />
-                <h2>{value && value === true ? "Valid JSON" : null}</h2>
-            </div> 
-            
+                <h3>Choose a file to validate..</h3>
+                <div className="pick">
+                    <input type="file" id="file" name="file" onChange={(e) => showContent(e)} />
+                    <h2>{value && value === true ? "Valid JSON" : null}</h2>
+                </div>
+            </div>
+
         </>
     );
 };

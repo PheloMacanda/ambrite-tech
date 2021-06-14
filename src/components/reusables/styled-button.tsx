@@ -1,21 +1,21 @@
 import { Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import { COLORS } from '../../constants/colors';
 
 const useStyles = makeStyles({
     btn: {
-        backgroundColor: '#ff00ff',
         cursor: 'pointer',
         margin: '5px',
         height: '50px',
-        width: '100px',
-        color: '#fff'
+        width: '120px',
+        color: COLORS.white
     }
-
 });
 
 interface IProps {
     onClick: () => void;
     btnname: string;
+    color: any;
 }
 
 const StyledBtn = (props: IProps) => {
@@ -23,7 +23,7 @@ const StyledBtn = (props: IProps) => {
     const classess = useStyles();
 
     return (
-        <Button {...props} className={classess.btn}>{props.btnname}</Button>
+        <Button {...props} className={classess.btn} style={{ backgroundColor: props.color }}>{props.btnname}</Button>
     );
 }
 

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import StyledBtn from '../components/reusables/styled-button';
-import DistanceTable from '../components/reusables/table';
+import DistanceTable from '../components/reusables/distance-table';
+import { COLORS } from '../constants/colors';
 import '../App.css';
 
 interface IData {
@@ -24,7 +25,6 @@ const Distance = () => {
             }
         })
         .then((response) => {
-            console.log(response);
             return response.json();
         })
         .then((responseJson:IData[]) => {
@@ -55,7 +55,11 @@ const Distance = () => {
     return (
         <>
             <div className="distance">
-                 <StyledBtn onClick={() => setShowTable(true)} btnname="Calculate!" />
+                 <StyledBtn 
+                    onClick={() => setShowTable(true)} 
+                    btnname="Calculate!" 
+                    color={COLORS.primary} 
+                />
 
                  {showTable ? <DistanceTable rows={rows} /> : null}
             </div>
