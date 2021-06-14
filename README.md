@@ -9,4 +9,4 @@ files from any directory and checking those files that they're in valid JSON for
 2. Task TWO was to calculate the shortest distance from latitude to longitude and presenting the data in a
 nicely formatted table.
 
-3. Task THREE was..
+3. Task THREE was to find the union between two objects given a set of arrays as input.
